@@ -1,7 +1,7 @@
 {
-  "name": "base_node_js_project_template",
+  "name": "Task Management System",
   "version": "1.0.0",
-  "description": "project structure for node",
+  "description": "Task Management System",
   "main": "index.js",
   "scripts": {
     "dev": "npx nodemon src/index.js"
