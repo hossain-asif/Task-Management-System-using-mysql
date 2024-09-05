@@ -2,7 +2,7 @@
 
 module.exports = {
 
-    taskValidation: require('./taskValidation'),
-    userValidation:require('./userValidation') 
+    TaskValidation: require('./taskValidation'),
+    UserValidation:require('./userValidation') 
     
 }

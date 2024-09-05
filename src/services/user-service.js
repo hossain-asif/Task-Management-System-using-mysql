@@ -22,6 +22,57 @@ function registration(data, callback){
 
 }
 
+function login(data, callback){
+    let sql = `SELECT * FROM users WHERE email = ? AND password = ?`;
+    let values = [
+        data.email,
+        data.password
+    ];
+    ExecuteQuery.executionQuery(sql, values, function(err, result){
+        callback(err, result);
+    });
+}
+
+function profileUpdate(data, email, callback){
+
+    if(data.firstName && !data.lastName){
+        let sql = 'UPDATE users SET firstName= ? WHERE email = ?';
+        let values = [
+            data.firstName,
+            email
+        ];
+        ExecuteQuery.executionQuery(sql, values, function(err, result){
+            callback(err, result);
+        });
+    }
+    else if(!data.firstName && data.lastName){
+        let sql = 'UPDATE users SET lastName= ? WHERE email = ?';
+        let values = [
+            data.lastName,
+            email
+        ];
+        ExecuteQuery.executionQuery(sql, values, function(err, result){
+            callback(err, result);
+        });
+    }
+    if(data.firstName && data.lastName){
+        let sql = 'UPDATE users SET firstName= ?, lastName = ? WHERE email = ?';
+        let values = [
+            data.firstName,
+            data.lastName,
+            email
+        ];
+        ExecuteQuery.executionQuery(sql, values, function(err, result){
+            callback(err, result);
+        });
+
+    }
+
+}
+
+
 module.exports = {
-    registration
+    registration,
+    login,
+    profileUpdate
 }
