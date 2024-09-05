@@ -9,7 +9,7 @@ function validateEmail(email) {
 
 
 function validateString(name) {
-    const nameRegex = /^[a-zA-Z\s]+$/;
+    const nameRegex = /^[a-zA-Z0-9\s]+$/;
     return nameRegex.test(name);
 }
 

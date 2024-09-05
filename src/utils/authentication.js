@@ -7,7 +7,7 @@ function createToken( email ){
     let token = jwt.sign(
         { email: email },
         'secret',
-        {expiresIn: '1h'}
+        {expiresIn: '24h'}
     );
     return token;
 }

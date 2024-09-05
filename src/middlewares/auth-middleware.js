@@ -24,7 +24,6 @@ function isAuthenticated(req,res,next){
                 .status(StatusCodes.UNAUTHORIZED)
                 .json(ErrorResponse);
     }
-    console.log(response['email']);
     req.headers.email = response['email'];
     next();
 }

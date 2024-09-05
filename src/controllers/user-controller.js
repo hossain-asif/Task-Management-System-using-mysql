@@ -28,7 +28,7 @@ function registration(req, res) {
             }
     
             SuccessResponse.message = "registration successful.";
-            SuccessResponse.data = data;
+            SuccessResponse.data = result;
             return res
                 .status(StatusCodes.CREATED)
                 .json(SuccessResponse);
